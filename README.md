@@ -1,4 +1,4 @@
-# Contacts demo application
+# Poker Hackathon Application
 
 ## Getting Started (Local Development)
 
@@ -19,41 +19,53 @@ following tools be installed:
 To get started with development, first clone this repository and install
 the dependencies:
 
-    $ git clone git@github.com:davidjamesherzog/contacts.git
+    $ git clone git@github.com:davidjamesherzog/poker-hackathon.git
     $ npm install
     $ bower install
 
-When ready to actively develop:
+#### When ready to actively develop:
 
-    $ gulp serve-dev
+    $ gulp serve:dev
 
 This command builds the client app for development, then serves it up
 in your browser via Browser Sync at [http://localhost:3000](http://localhost:3000). Changes made will automatically be served up by
 Browser Sync.  If you do not want Browser Sync to run, use the nosync parameter:
 
-    $ gulp serve-dev --nosync
+    $ gulp serve:dev --nosync
+
+The app will be served up at [http://localhost:8001](http://localhost:8001).
+
+#### When ready to actively build:
+
+    $ gulp serve:build
+
+This command builds the client app for development, then serves it up
+in your browser via Browser Sync at [http://localhost:3000](http://localhost:3000). Changes made will automatically be served up by
+Browser Sync.  If you do not want Browser Sync to run, use the nosync parameter:
+
+    $ gulp serve:build --nosync
 
 The app will be served up at [http://localhost:8001](http://localhost:8001).
 
 Should you want watchers to run so that the app will auto test every time you save a file, simply run:
 
-    $ gulp autotest
+    $ gulp test:auto
 
 
 ## Running Tests
 
 The full test suite can be run with:
 
-    $ gulp test
+    $ gulp test:single
 
 While developing, you can continuously test the code you are editing
 by running:
 
-    $ gulp autotest
+    $ gulp test:auto
     
 For easier debugging while testing, you can run the spec runner in your browser by running:
 
-    $ gulp serve-specs
+    $ gulp serve:specs
 
 
 ## Primary Gulp Tasks
@@ -62,12 +74,12 @@ For easier debugging while testing, you can run the spec runner in your browser 
 
 Builds the client application. Build results are output to `build/`. 
 
-#### `test`
+#### `test:single`
 
 Runs the full application test suite. Test results are output to the console,
 and a test coverage report is output to `report/`.
 
-#### `autotest`
+#### `test:auto`
 
 Watches the filesystem for changes and rebuilds parts of the application as
 needed, running the test suite once the rebuild completes. 
