@@ -27,8 +27,14 @@
         deferred.reject(response.data);
       };
 
+      var fullHand = hand.card1 +  '|' +
+        hand.card2 +  '|' +
+        hand.card3 +  '|' +
+        hand.card4 +  '|' +
+        hand.card5;
+
       var PokerHand = new ApiFactory(ENDPOINTS.hand, {
-        h: hand
+        h: fullHand
       });
       PokerHand.get(success, error);
 
