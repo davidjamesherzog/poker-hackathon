@@ -1,0 +1,27 @@
+{
+   "game_guid":"abcd1234",
+   "player_guid":"zyxz9876",
+   "pocket":[
+      "sa",
+      "sk"
+   ],
+   "status":"preflop",
+   "active_player":"jklm5678",
+   "available_action":[
+      "fold,call"
+   ],
+   "community":[
+      "h3",
+      "c4",
+      "d8",
+      "s8",
+      "sA"
+   ],
+   "players":[
+      "player1",
+      "player2"
+   ],
+   "prev_action":"Player 2 called",
+   "pot_value":0.00,
+   "player_stake":0.00
+}
