@@ -11,10 +11,33 @@
   function PokerService($q, ApiFactory, ENDPOINTS) {
 
     var poker = {
+      action: action,
       getHand: getHand,
-      join: join
+      join: join,
+      status: status
     };
     return poker;
+
+    function action(action, amount) {
+
+      var deferred = $q.defer();
+
+      var success = function(response) {
+        deferred.resolve(response);
+      };
+
+      var error = function(response) {
+        deferred.reject(response.data);
+      };
+
+      var Action = new ApiFactory(ENDPOINTS.action);
+      Action.save({
+        action: action,
+        amount: amount
+      }, success, error);
+
+      return deferred.promise;
+    }
 
     function getHand(hand) {
 
@@ -43,6 +66,7 @@
     };
 
     function join(name, table) {
+
       var deferred = $q.defer();
 
       var success = function(response) {
@@ -58,6 +82,24 @@
         name: name,
         table: table
       }, success, error);
+
+      return deferred.promise;
+    }
+
+    function status() {
+
+      var deferred = $q.defer();
+
+      var success = function(response) {
+        deferred.resolve(response);
+      };
+
+      var error = function(response) {
+        deferred.reject(response.data);
+      };
+
+      var Status = new ApiFactory(ENDPOINTS.join);
+      Status.get(success, error);
 
       return deferred.promise;
     }

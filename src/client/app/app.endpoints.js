@@ -4,8 +4,8 @@
     .module('poker')
     .constant('ENDPOINTS', {
 
-      episode: {
-        endpoint: '/api/5/series/:id/episodes/:episode/'
+      action: {
+        endpoint: '/action'
       },
 
       hand: {
@@ -14,8 +14,11 @@
 
       join: {
         endpoint: '/join'
-      }
+      },
 
+      status: {
+        endpoint: '/status'
+      }
 
     });
 
