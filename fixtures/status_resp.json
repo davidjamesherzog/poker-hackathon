@@ -3,8 +3,17 @@
       "sa",
       "sk"
    ],
-   "hand_description":"Two Pair",
-   "hand_score":"001234556",
+   "hand":{
+      "description":"Two Pair",
+      "score":"0001234467",
+      "best5":[
+         "ha",
+         "sa",
+         "d8",
+         "s8",
+         "sk"
+      ]
+   },
    "status":"preflop",
    "active_player":"jklm5678",
    "available_action":[
@@ -15,7 +24,7 @@
       "c4",
       "d8",
       "s8",
-      "sa"
+      "ha"
    ],
    "players":[
       "player1",
