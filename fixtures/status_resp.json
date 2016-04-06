@@ -1,0 +1,36 @@
+{
+   "pocket":[
+      "sa",
+      "sk"
+   ],
+   "hand":{
+      "description":"Two Pair",
+      "score":"0001234467",
+      "best5":[
+         "ha",
+         "sa",
+         "d8",
+         "s8",
+         "sk"
+      ]
+   },
+   "status":"preflop",
+   "active_player":"jklm5678",
+   "available_action":[
+      "fold,call"
+   ],
+   "community":[
+      "h3",
+      "c4",
+      "d8",
+      "s8",
+      "ha"
+   ],
+   "players":[
+      "player1",
+      "player2"
+   ],
+   "prev_action":"Player 2 called",
+   "pot_value":0.00,
+   "player_stake":0.00
+}
