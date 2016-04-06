@@ -1,0 +1,16 @@
+<div class="row">
+  <h2>Join</h2>
+  <div class="input-group">
+    <form role="form">
+      <div class="form-group">
+        <label for="card1">Name</label>
+        <input type="text" ng-model="vm.joinInfo.name" class="form-control" id="name">
+      </div>
+      <div class="form-group">
+        <label for="card2">Table</label>
+        <input type="text" ng-model="vm.joinInfo.table" class="form-control" id="table">
+      </div>
+      <button type="submit" ng-click="vm.getJoinInfo(vm.joinInfo)" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</div>

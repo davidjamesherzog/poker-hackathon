@@ -10,7 +10,12 @@
 
       hand: {
         endpoint: '/hand/score'
+      },
+
+      join: {
+        endpoint: '/join'
       }
+
 
     });
 
