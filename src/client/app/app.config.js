@@ -36,7 +36,15 @@
         templateUrl: 'app/layout/join.html',
         controller: 'JoinController',
         controllerAs: 'vm'
-      });
+      })
+
+      .state('table', {
+        url: '/table',
+        templateUrl: 'app/layout/table.html',
+        controller: 'TableController',
+        controllerAs: 'vm'
+      })
+;
   }
 
 })();

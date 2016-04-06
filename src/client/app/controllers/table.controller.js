@@ -6,9 +6,9 @@
     .controller('TableController', TableController);
 
   /* @ngInject */
-  JoinController.$inject = ['toastr', '$window', 'PokerService'];
+  TableController.$inject = ['toastr', '$window', 'PokerService'];
 
-  function JoinController(toastr, $window, PokerService) {
+  function TableController(toastr, $window, PokerService) {
     var vm = this;
     vm.getStatus = getStatus;
     vm.user = {guid: $window.localStorage.user_guid, name: $window.localStorage.name}
@@ -31,8 +31,20 @@
         toastr.error(response, 'Error');
       };
 
-      PokerService.join(joinInfo.name, joinInfo.table).then(success, failure);
-    }
+      PokerService.getStatus().then(success, failure);
+    };
+
+  function makeBet(amount) {
+    var success = function(response) {
+      vm.betStatus = response;
+    };
+
+    var failure = function(response) {
+      toastr.error(response, 'Error');
+    };
+
+    PokerService.action('bet', amount).then(success, failure);
+  };
 
   }
 
