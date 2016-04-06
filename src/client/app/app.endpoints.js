@@ -10,7 +10,17 @@
 
       hand: {
         endpoint: '/hand/score'
+      },
+
+      join: {
+        endpoint: '/join',
+        actions: {
+          'save': {
+            method: 'POST'
+          }
+        }
       }
+
 
     });
 

@@ -24,10 +24,17 @@
         controllerAs: 'vm'
       })*/
 
-      .state('poker', {
-        url: '/',
+      .state('hands', {
+        url: '/hands',
         templateUrl: 'app/layout/poker.html',
         controller: 'PokerController',
+        controllerAs: 'vm'
+      })
+
+      .state('join', {
+        url: '/',
+        templateUrl: 'app/layout/join.html',
+        controller: 'JoinController',
         controllerAs: 'vm'
       });
   }

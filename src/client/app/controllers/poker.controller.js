@@ -27,7 +27,6 @@
 
       PokerService.getHand(hand).then(success, failure);
     }
-
   }
 
 })();
