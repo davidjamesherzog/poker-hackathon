@@ -13,12 +13,7 @@
       },
 
       join: {
-        endpoint: '/join',
-        actions: {
-          'save': {
-            method: 'POST'
-          }
-        }
+        endpoint: '/join'
       }
 
 
