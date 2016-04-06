@@ -15,7 +15,7 @@
     function getJoinInfo(joinInfo) {
 
       var success = function(response) {
-        console.log([response.player_guid, reponse.game_guid]);
+        console.log([response.player_guid, response.game_guid]);
         vm.user = response.player_guid;
         vm.game = response.game_guid;
         vm.name = joinInfo.name;
