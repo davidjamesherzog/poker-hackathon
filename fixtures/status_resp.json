@@ -1,10 +1,10 @@
 {
-   "game_guid":"abcd1234",
-   "player_guid":"zyxz9876",
    "pocket":[
       "sa",
       "sk"
    ],
+   "hand_description":"Two Pair",
+   "hand_score":"001234556",
    "status":"preflop",
    "active_player":"jklm5678",
    "available_action":[
@@ -15,7 +15,7 @@
       "c4",
       "d8",
       "s8",
-      "sA"
+      "sa"
    ],
    "players":[
       "player1",
