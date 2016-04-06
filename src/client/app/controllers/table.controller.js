@@ -10,10 +10,15 @@
 
   function TableController(toastr, $window, PokerService) {
     var vm = this;
-    vm.getStatus = getStatus;
-    vm.user = {guid: $window.localStorage.user_guid, name: $window.localStorage.name}
+    vm.status = status;
+    vm.fold = fold;
+    vm.call = call;
 
-    function getStatus() {
+    vm.user = {guid: $window.localStorage.user_guid, name: $window.localStorage.name};
+
+    vm.status();
+
+    function status() {
 
       var success = function(response) {
         vm.pocket = response.pocket;
@@ -25,26 +30,39 @@
         vm.prevAction = response.prev_action;
         vm.potValue = response.pot_value;
         vm.playerStake = response.player_stake;
+        vm.name = $window.localStorage.name;
       };
 
       var failure = function(response) {
         toastr.error(response, 'Error');
       };
 
-      PokerService.getStatus().then(success, failure);
-    };
+      PokerService.status().then(success, failure);
+    }
 
-  function makeBet(amount) {
-    var success = function(response) {
-      vm.betStatus = response;
-    };
+    function fold(amount) {
+      var success = function(response) {
+        vm.betStatus = response;
+      };
 
-    var failure = function(response) {
-      toastr.error(response, 'Error');
-    };
+      var failure = function(response) {
+        toastr.error(response, 'Error');
+      };
 
-    PokerService.action('bet', amount).then(success, failure);
-  };
+      PokerService.action('fold', amount).then(success, failure);
+    }
+
+    function call(amount) {
+      var success = function(response) {
+        vm.betStatus = response;
+      };
+
+      var failure = function(response) {
+        toastr.error(response, 'Error');
+      };
+
+      PokerService.action('call', amount).then(success, failure);
+    }
 
   }
 

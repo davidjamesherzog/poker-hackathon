@@ -5,8 +5,8 @@
     .module('poker')
     .config(config);
 
-  config.$inject = ['$stateProvider', '$urlRouterProvider'];
-  function config($stateProvider, $urlRouterProvider) {
+  config.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
+  function config($locationProvider, $stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -43,8 +43,9 @@
         templateUrl: 'app/layout/table.html',
         controller: 'TableController',
         controllerAs: 'vm'
-      })
-;
+      });
+
+    $locationProvider.html5Mode(true);
   }
 
 })();
