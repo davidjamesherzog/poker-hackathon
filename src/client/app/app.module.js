@@ -1,6 +1,10 @@
 (function () {
   'use strict';
 
-  angular.module('contactsApp', ['ui.router', 'toastr']);
+  angular.module('poker', [
+    'ui.router',
+    'ngResource',
+    'toastr'
+  ]);
 
 })();

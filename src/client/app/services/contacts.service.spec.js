@@ -2,7 +2,7 @@
 describe('Contacts Service', function () {
 
   beforeEach(function () {
-    bard.appModule('contactsApp');
+    bard.appModule('poker');
     bard.inject('contactsService');
     localStorage.clear();
     localStorage['Dave'] = '555-555-5555';

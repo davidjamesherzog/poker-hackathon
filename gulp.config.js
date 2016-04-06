@@ -78,7 +78,7 @@ module.exports = function () {
     templateCache: {
       file: 'templates.js',
       options: {
-        module: 'contactsApp',
+        module: 'poker',
         root: 'app/',
         standAlone: false
       }

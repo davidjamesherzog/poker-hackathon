@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="contactsApp">
+<html lang="en" ng-app="poker">
 <head>
     <meta charset="utf-8">
     <title>Contacts</title>
@@ -33,6 +33,7 @@
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
   <script src="/bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
   <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -49,8 +50,10 @@
   <!-- inject:js -->
   <script src="/src/client/app/app.module.js"></script>
   <script src="/src/client/app/app.config.js"></script>
+  <script src="/src/client/app/app.endpoints.js"></script>
   <script src="/src/client/app/controllers/contacts.controller.js"></script>
   <script src="/src/client/app/controllers/contacts.detail.controller.js"></script>
+  <script src="/src/client/app/factories/api.factory.js"></script>
   <script src="/src/client/app/services/contacts.service.js"></script>
   <!-- endinject -->
 

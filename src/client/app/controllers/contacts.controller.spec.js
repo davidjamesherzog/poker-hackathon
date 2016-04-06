@@ -5,7 +5,7 @@ describe('Contacts Controller', function () {
 
   beforeEach(function () {
     //module('app.people');
-    bard.appModule('contactsApp');
+    bard.appModule('poker');
     bard.inject('$controller', '$rootScope');
 
     var cs = {

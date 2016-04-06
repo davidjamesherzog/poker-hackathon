@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('contactsApp')
+    .module('poker')
     .controller('ContactsDetailController', ContactsDetailController);
 
   /* @ngInject */

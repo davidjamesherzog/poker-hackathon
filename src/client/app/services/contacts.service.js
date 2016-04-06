@@ -2,17 +2,19 @@
   'use strict';
 
   angular
-    .module('contactsApp')
+    .module('poker')
     .factory('contactsService', contactsService);
 
   /* @ngInject */
+  contactsService.$inject = ['ApiFactory', 'ENDPOINTS'];
 
-  function contactsService() {
+  function contactsService(ApiFactory, ENDPOINTS) {
 
     var contacts = {
       list: list,
       find: find,
-      create: create
+      create: create,
+      episode: episode
     };
     return contacts;
 
@@ -49,6 +51,20 @@
 
       localStorage[contact.name] = contact.phone;
 
+    }
+
+    function episode() {
+
+      var Episode = new ApiFactory(ENDPOINTS.episode, {
+        id: 1,
+        episode: 1
+      });
+      Episode.get(episodeSuccess);
+
+    }
+
+    function episodeSuccess(response) {
+      console.log(response);
     }
 
   }

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('contactsApp')
+    .module('poker')
     .controller('ContactsController', ContactsController);
 
   /* @ngInject */
@@ -12,6 +12,7 @@
     var vm = this;
     vm.list = list;
     vm.create = create;
+    vm.episode = episode;
 
     vm.contacts = [];
 
@@ -25,6 +26,11 @@
       contactsService.create(contact);
       list();
       toastr.success('Created Contact - ' + contact.name, 'Success');
+    }
+
+    function episode() {
+      contactsService.episode();
+      toastr.success('Retrieved Episode', 'Success');
     }
 
   }

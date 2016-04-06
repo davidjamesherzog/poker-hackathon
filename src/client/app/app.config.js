@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('contactsApp')
+    .module('poker')
     .config(config);
 
   config.$inject = ['$stateProvider', '$urlRouterProvider'];

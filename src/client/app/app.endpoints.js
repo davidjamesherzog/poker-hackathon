@@ -1,10 +1,10 @@
 (function () {
 
   angular
-    .module('contactsApp')
+    .module('poker')
     .constant('ENDPOINTS', {
 
-      videoAssetEpisode: {
+      episode: {
         endpoint: '/api/5/series/:id/episodes/:episode/'
       }
 
