@@ -1,6 +1,6 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    angular.module('contactsApp', ['ui.router', 'toastr']);
+  angular.module('contactsApp', ['ui.router', 'toastr']);
 
 })();

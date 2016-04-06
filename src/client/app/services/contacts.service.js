@@ -1,56 +1,56 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('contactsApp')
-        .factory('contactsService', contactsService);
+  angular
+    .module('contactsApp')
+    .factory('contactsService', contactsService);
 
-    /* @ngInject */
+  /* @ngInject */
 
-    function contactsService() {
+  function contactsService() {
 
-        var contacts = {
-            list: list,
-            find: find,
-            create: create
-        };
-        return contacts;
+    var contacts = {
+      list: list,
+      find: find,
+      create: create
+    };
+    return contacts;
 
-        function list() {
+    function list() {
 
-            var contacts = [];
+      var contacts = [];
 
-            for (var i = 0; i < localStorage.length; i++) {
-                var contact = {};
-                contact.name = localStorage.key(i);
-                contact.phone = localStorage[contact.name];
-                contacts.push(contact);
-            }
+      for (var i = 0; i < localStorage.length; i++) {
+        var contact = {};
+        contact.name = localStorage.key(i);
+        contact.phone = localStorage[contact.name];
+        contacts.push(contact);
+      }
 
-            return contacts;
-
-        }
-
-        function find(name) {
-
-            var contact = {};
-
-            contact.name = name;
-            contact.phone = localStorage[name];
-
-            return contact;
-
-        }
-
-        function create(contact) {
-
-            console.log('Name: ' + contact.name);
-            console.log('Phone: ' + contact.phone);
-
-            localStorage[contact.name] = contact.phone;
-
-        }
+      return contacts;
 
     }
+
+    function find(name) {
+
+      var contact = {};
+
+      contact.name = name;
+      contact.phone = localStorage[name];
+
+      return contact;
+
+    }
+
+    function create(contact) {
+
+      console.log('Name: ' + contact.name);
+      console.log('Phone: ' + contact.phone);
+
+      localStorage[contact.name] = contact.phone;
+
+    }
+
+  }
 
 })();
