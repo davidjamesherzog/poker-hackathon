@@ -5,10 +5,10 @@
     .module('poker')
     .factory('ApiFactory', ApiFactory);
 
-  ApiFactory.$inject = ['$resource'];
+  ApiFactory.$inject = ['$resource', '$window'];
 
   /* @ngInject */
-  function ApiFactory($resource) {
+  function ApiFactory($resource, $window) {
 
     var Api = function (api, config) {
 
@@ -16,8 +16,8 @@
 
       // make sure we have a config object to work with for all requests
       config = config || {};
-      config.cs = 'gvgSW3Ga3HMambud';
-      config.dfs = '';
+      config.game_guid = $window.localStorage.game_guid;
+      config.player_guid = $window.localStorage.player_guid;
 
       if (api.actions) {
         return $resource(applicationUrl + api.endpoint, config, api.actions);
