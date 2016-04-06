@@ -1,0 +1,18 @@
+<div class="row">
+  <h2>Poker</h2>
+  <div class="input-group">
+    <form role="form">
+      <div class="form-group">
+        <label for="hand">Hand</label>
+        <input type="text" ng-model="vm.hand" class="form-control" id="hand">
+      </div>
+      <button type="submit" ng-click="vm.getHand(vm.hand)" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <h2>Result</h2>
+  <div>{{vm.name}}</div>
+
+</div>

@@ -10,7 +10,7 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('contacts', {
+      /*.state('contacts', {
         url: '/',
         templateUrl: 'app/layout/contacts.html',
         controller: 'ContactsController',
@@ -21,6 +21,13 @@
         url: '/details/:name',
         templateUrl: 'app/layout/contact.details.html',
         controller: 'ContactsDetailController',
+        controllerAs: 'vm'
+      })*/
+
+      .state('poker', {
+        url: '/',
+        templateUrl: 'app/layout/poker.html',
+        controller: 'PokerController',
         controllerAs: 'vm'
       });
   }
