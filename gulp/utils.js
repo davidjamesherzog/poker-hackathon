@@ -276,12 +276,12 @@ module.exports = function () {
         log('Starting BrowserSync on port ' + port);
 
         // If build: watches the files, builds, and restarts browser-sync.
-        // If dev: watches less, compiles it to css, browser-sync handles reload
+        // If dev: watches sass, compiles it to css, browser-sync handles reload
         if (isDev) {
-            gulp.watch([config.less], ['build:styles'])
+            gulp.watch([config.sass], ['build:styles'])
                 .on('change', changeEvent);
         } else {
-            gulp.watch([config.less, config.js, config.html], ['build:optimize', browserSync.reload])
+            gulp.watch([config.sass, config.js, config.html], ['build:optimize', browserSync.reload])
                 .on('change', changeEvent);
         }
 
@@ -290,7 +290,7 @@ module.exports = function () {
             port: 3000,
             files: isDev ? [
                 config.client + '**/*.*',
-                '!' + config.less,
+                '!' + config.sass,
                 config.temp + '**/*.css'
             ] : [],
             ghostMode: { // these are the defaults t,f,t,t
