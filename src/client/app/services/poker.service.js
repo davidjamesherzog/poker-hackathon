@@ -80,7 +80,7 @@
       var PokerJoin = new ApiFactory(ENDPOINTS.join);
       PokerJoin.save({
         name: name,
-        table: table
+        game_guid: table
       }, success, error);
 
       return deferred.promise;
@@ -91,6 +91,13 @@
       var deferred = $q.defer();
 
       var success = function(response) {
+
+        if (response.community.length < 5) {
+          for (var i = 0; i < (5 - response.community.length); i++) {
+            response.community.push('back');
+          }
+        }
+
         deferred.resolve(response);
       };
 
@@ -98,7 +105,7 @@
         deferred.reject(response.data);
       };
 
-      var Status = new ApiFactory(ENDPOINTS.join);
+      var Status = new ApiFactory(ENDPOINTS.status);
       Status.get(success, error);
 
       return deferred.promise;
