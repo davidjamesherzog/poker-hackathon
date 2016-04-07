@@ -5,7 +5,7 @@
     .constant('ENDPOINTS', {
 
       action: {
-        endpoint: '/action'
+        endpoint: '/user/action/'
       },
 
       hand: {
@@ -13,11 +13,11 @@
       },
 
       join: {
-        endpoint: '/join'
+        endpoint: '/join/'
       },
 
       status: {
-        endpoint: '/status'
+        endpoint: '/game/status/'
       }
 
     });

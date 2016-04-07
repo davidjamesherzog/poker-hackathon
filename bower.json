@@ -16,10 +16,11 @@
     "angular": "~1.4.0",
     "angular-resource": "~1.4.0",
     "angular-toastr": "~1.4.0",
-    "font-awesome": "~4.2.0",
+    "angular-websocket": "~1.1.0",
     "angular-ui-router": "~0.2.12",
-    "toastr": "~2.1.0",
-    "angular-websocket": "~1.1.0"
+    "bourbon": "^4.2.6",
+    "font-awesome": "~4.2.0",
+    "toastr": "~2.1.0"
   },
   "resolutions": {
     "angular": "~1.4.0"
