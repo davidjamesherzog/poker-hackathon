@@ -1,0 +1,73 @@
+.actions {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background: linear-gradient(to bottom, #41372e, #1a1a18);
+  border-top: 1px solid #54483c;
+  box-shadow: 0 -10px 20px rgba(#000, .25);
+  &__wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  &__label {
+    position: absolute;
+    top: -5px;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    color: #fff;
+    font-size: em(11);
+    font-family: $headline;
+    text-transform: uppercase;
+  }
+  &__stash {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+  }
+  &__group {
+    margin-top: 20px;
+    // align-self: flex-end;
+  }
+  &__item {
+
+  }
+}
+
+.btn {
+  display: inline-block;
+  width: 90px;
+  background: #aaa;
+  padding: 13px 20px;
+  border-radius: 6px;
+  color: #fff;
+  font-family: $headline;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 2px rgba(#000,.3);
+  box-shadow: 0 2px 4px rgba(#000, .4);
+  border: 1px solid #000;
+  text-decoration: none;
+  &--check {
+    background: linear-gradient(#14c7f4, #1f82b5);
+    box-shadow: inset 0 0 3px #67f6ff;
+  }
+  &--bet {
+    background: linear-gradient(#52e021, #42a61f);
+    box-shadow: inset 0 0 3px #85ff5b;
+  }
+  &--fold {
+    background: linear-gradient(#f12e2e, #b51f1f);
+    box-shadow: inset 0 0 3px #ff7d7d;
+  }
+}
