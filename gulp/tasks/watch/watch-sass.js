@@ -2,9 +2,9 @@
 
 module.exports = function (gulp, config, plugins) {
     /**
-     * Watch less files and recompile
+     * Watch sass files and recompile
      */
     return function () {
-        gulp.watch([config.less], ['build:styles']);
+        gulp.watch([config.sass], ['build:styles']);
     };
 };
