@@ -33,7 +33,7 @@
         vm.name = $window.localStorage.name;
       };
 
-      var socketURL = 'ws://probablypokertrain.net:8000/status/' +
+      var socketURL = 'ws://pokertrain.net:8000/game/status/' +
         $window.localStorage.game_guid + '/' + $window.localStorage.player_guid;
       console.log(socketURL);
       var wsStatus = $websocket(socketURL);
