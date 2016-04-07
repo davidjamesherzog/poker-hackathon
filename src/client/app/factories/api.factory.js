@@ -12,7 +12,7 @@
 
     var Api = function (api, config) {
 
-      var applicationUrl = 'http://www.pokerbrain.net:88';
+      var applicationUrl = 'http://www.pokerbrain.net:8000';
 
       // make sure we have a config object to work with for all requests
       config = config || {};
