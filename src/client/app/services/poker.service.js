@@ -63,7 +63,7 @@
       PokerHand.get(success, error);
 
       return deferred.promise;
-    };
+    }
 
     function join(name, table) {
 
