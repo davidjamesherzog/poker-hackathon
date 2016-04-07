@@ -6,9 +6,9 @@
     .controller('JoinController', JoinController);
 
   /* @ngInject */
-  JoinController.$inject = ['toastr', '$window', 'PokerService'];
+  JoinController.$inject = ['toastr', '$location', '$window', 'PokerService'];
 
-  function JoinController(toastr, $window, PokerService) {
+  function JoinController(toastr, $location, $window, PokerService) {
     var vm = this;
     vm.getJoinInfo = getJoinInfo;
 
@@ -22,6 +22,8 @@
         $window.localStorage.player_guid = response.player_guid;
         $window.localStorage.game_guid = response.game_guid;
         $window.localStorage.name = joinInfo.name;
+
+        $location.url('/table');
       };
 
       var failure = function(response) {
