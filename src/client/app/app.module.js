@@ -4,7 +4,8 @@
   angular.module('poker', [
     'ui.router',
     'ngResource',
-    'toastr'
+    'toastr',
+    'ngWebSocket'
   ]);
 
 })();
