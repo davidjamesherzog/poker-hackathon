@@ -24,6 +24,9 @@ module.exports = function () {
       './src/client/**/*.js',
       './*.js'
     ],
+    allsass: [
+      './src/client/styles/*.scss'
+    ],
     build: './build/',
     client: client,
     css: temp + 'styles.css',
