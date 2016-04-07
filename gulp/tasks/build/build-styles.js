@@ -9,6 +9,8 @@ module.exports = function (gulp, config, plugins) {
         deps: ['clean:styles'],
         fn: function () {
             plugins.utils.log('Compiling Sass --> CSS');
+            var browserSync = require('browser-sync');
+            var reload = browserSync.reload;
 
             return gulp
                 .src(config.sass)
@@ -16,7 +18,8 @@ module.exports = function (gulp, config, plugins) {
                 .pipe(plugins.sass())
 //        .on('error', errorLogger) // more verbose and dupe output. requires emit.
                 .pipe(plugins.autoprefixer({browsers: ['last 2 version', '> 5%']}))
-                .pipe(gulp.dest(config.temp));
+                .pipe(gulp.dest(config.temp))
+                .pipe(reload({stream: true}));;
         }
     };
 };
