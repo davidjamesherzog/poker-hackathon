@@ -6,9 +6,9 @@
     .controller('TableController', TableController);
 
   /* @ngInject */
-  TableController.$inject = ['toastr', '$window', 'PokerService'];
+  TableController.$inject = ['toastr', '$websocket', '$window', 'PokerService'];
 
-  function TableController(toastr, $window, PokerService) {
+  function TableController(toastr, $websocket, $window, PokerService) {
     var vm = this;
     vm.status = status;
     vm.fold = fold;
@@ -33,11 +33,12 @@
         vm.name = $window.localStorage.name;
       };
 
-      var failure = function(response) {
-        toastr.error(response, 'Error');
-      };
+      var socketURL = 'ws://pokertrain.net:8000/game/status/' +
+        $window.localStorage.game_guid + '/' + $window.localStorage.player_guid;
+      console.log(socketURL);
+      var wsStatus = $websocket(socketURL);
 
-      PokerService.status().then(success, failure);
+      wsStatus.onMessage(success);
     }
 
     function fold(amount) {
